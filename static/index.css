@@ -1,0 +1,140 @@
+*{
+    background-color: black;    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    text-decoration: none;
+}
+/* body{
+    background-image: url("../static/img/bg1.webp");
+} */
+nav{
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 10px;
+    margin: 10px;
+}
+nav a{
+
+    border: 1.4px solid;
+    border-color: black ;
+    background-color: rgb(191, 221, 221,0.6);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+}
+nav a:hover{
+    background-color: rgb(230, 148, 26);
+    color: rgb(255, 255, 255);
+}
+
+h1{
+
+    text-decoration: overline;
+    width: 40%;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    background-color: rgba(251, 248, 248, 0.7);
+    color: rgb(230, 148, 26);
+    text-align: center;
+    margin-left: 25%;
+    padding: 0px;
+}
+
+h4{
+    width: 30%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    background-color: rgba(4, 4, 3,0.5);
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+p{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(11, 11, 11);
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+.cont{
+            color: rgb(248, 248, 254); 
+            background-color:rgba(128, 128, 241,0.7); 
+            border-radius: 10px; 
+            padding: 10px; 
+            border: 1px solid;
+            width: 30%; 
+            margin-left: 28%;
+            
+}
+input{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(251, 251, 251);
+    text-align: center;
+    
+}
+input.submit{
+    
+    float: right;
+    margin-right: 60%;
+    top: 50%;    
+    padding: 8px;
+    border-radius: 10px;
+    border-color: rgb(1, 85, 1);
+    background-color: rgba(96, 125, 14,0.5);
+}
+input.file{
+    display: inline;
+
+    border: 2px solid ;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 71);
+    background-color: rgba(14, 64, 125, 0.5);
+}
+input.file:hover{
+    background-color: rgb(14, 64, 125);
+}
+input.submit:hover{
+    background-color: rgba(96, 125, 14,0.8);
+}
+footer{
+    margin-top: 180px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-justify: auto;
+    bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

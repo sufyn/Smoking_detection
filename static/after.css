@@ -1,0 +1,115 @@
+*{
+    
+    background-color: rgb(0, 0, 0);
+}
+.drpbtn{
+    display: inline-block;
+    cursor: pointer;
+}
+.drop-cnt a{
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    background-color: rgb(250, 249, 249);
+    color: rgb(15, 15, 15);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+}
+.drop-cnt a:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 154, 23);
+    border: 1.5px solid rgb(255, 154, 23);
+}
+.nav{
+    position: relative;
+}
+.drop-cnt{
+    display: none;
+    position: absolute;
+    
+}
+.nav:hover .drop-cnt{
+    display: block;
+}
+.nav img{
+    width: 4%;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+@media (min-width:425px) and (max-width: 1600px){
+    .nav img{
+        display: none;
+    }
+    .drop-cnt{
+
+        display: flex;
+        flex-direction: row;
+    }
+    .drop-cnt a{
+        display: inline-block;
+        text-decoration: none;
+        border: 1.5px solid #000;
+        background-color: rgb(250, 249, 249);
+        color: rgb(15, 15, 15);
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        z-index: 1;
+        margin: 8px;
+    }
+    .drop-cnt a:hover{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 154, 23);
+        border: 1.5px solid rgb(255, 154, 23);
+    }
+    .sec2{
+        position: absolute;
+        transform: translate(1% ,170%);
+        color: white;
+    }
+    .sec2 video{
+        transform: translate(70%,-80%);
+        float: right;
+        width: 60%;
+        z-index: 1;    
+        border-radius: 14px;
+    }
+    
+    .sec2 h1{
+        transform: translate(1%,-290%);
+        text-transform: capitalize;
+        text-shadow: rgb(248, 232, 0) 0px 0px 10px;
+        font-size: 50px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: rgb(245, 169, 7);
+        padding: 10px;
+       }
+       .retry{
+        color: aliceblue;
+        border: 1px solid rgb(255, 154, 23);
+        padding: 10px;
+        
+        border-radius: 8px;
+    }
+    .retry:hover{
+        background-color: rgb(255, 154, 23);
+        color: rgb(0, 0, 0);
+    }
+    .bef-img{
+        width: 40%;
+        height: 40%;
+        transform: translate();
+        
+    }
+    .aft-img{
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        z-index: -1;
+        
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Smoking Detection</title>
+</head>
+<body>
+    <nav><div class="nav">
+        <img class="dropbtn" src="{{url_for('static', filename='menu.png')}}" >
+
+        <div class="drop-cnt">
+        <a href='/Mujahid'>Project-details</a>
+        <a href='/Kaif'>Journey</a>
+        <a href='/Faiz'>Smoking</a>
+        <a href='/Anas'>Future</a>
+    </div>
+    </nav></div>
+
+    <section>
+        <div class="sec1">
+        
+        <img src="{{url_for('static', filename='smk.gif')}}" alt="smoke" >
+        <h1>
+            
+            <span>Smoking Detection</span></h1>
+    </div>
+    </section>
+    <br>
+    <section>
+        <div class="sec2">
+            <h1>Smoking Detection using harcascade</h1>
+            <video src="{{url_for('static', filename='videoplayback.mp4')}}" autoplay muted controls ></video>
+        
+        <br><br>
+        <model-viewer src="cigarette.mb" alt="A 3D model of an astronaut" auto-rotate camera-controls></model-viewer>
+        <form action="{{url_for('after')}}" method="POST" enctype="multipart/form-data">
+            <input type="file" class="file" name="file1">
+            <input type="submit" class="submit" value="Upload">
+            <p class="cont" >Choose image file to upload</p>
+        </form>
+        </div>
+</body>
+</html>
