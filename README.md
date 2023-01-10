@@ -1,7 +1,7 @@
 # Smoking_detetction
 SMOKING DETECTION !!
 
-Webapp: http://sufyn.pythonanyhwere.com
+Webapp: https://sufyn.pythonanywhere.com/
 
 Google Collab: https://colab.research.google.com/drive/1K7Z0erzqqzwsEWDWPgLMbUdApuuzdWii#scrollTo=ZhAz9JVuiDDD&uniqifier=4
 *************************************************************************************************************************************************************************
