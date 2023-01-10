@@ -1,0 +1,253 @@
+<head>
+  <link rel="icon" href="{{url_for('static', filename='mml.png')}}" type="image/x-icon">
+  <title>smoking</title>
+  <style> body { margin: 0; 
+background: none;  
+} 
+
+.navbar{
+    
+  position: absolute;
+  top: 5;
+  left: -10;
+}
+.drpbtn{
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1.5;
+    position: fixed;
+}
+.drop-cnt a{
+    
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    background-color: rgb(250, 249, 249);
+    color: rgb(15, 15, 15);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.drop-cnt a:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 154, 23);
+    /* border: 1.5px solid rgb(255, 154, 23); */
+}
+.drop-cnt{
+    
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+.nav:hover .drop-cnt{
+    display: block;
+}
+.nav img{
+    margin: 10px;
+    z-index: 1;
+    position: absolute;
+    width: 8%;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+@media all and (max-width:1830px) and (min-width:830px)
+{
+  body{
+    background-color: rgb(0, 0, 0);
+  }
+  .nav img{
+        display: none;
+    }
+    .nav{
+
+        z-index: 20;
+    }
+    .drop-cnt{
+        border-bottom: rgb(245, 242, 242) 2px solid;
+        width: 100%;
+        background-color: #000;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+    }
+    .drop-cnt a{
+        font: 20px 'Roboto', sans-serif;
+        margin: 10px;
+        display: inline-block;
+        text-decoration: none;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        
+    }
+    .drop-cnt a:hover{
+        /* background-color: rgb(0, 0, 0); */
+        color: rgb(255, 154, 23);
+        
+        font-size: large;      
+    }
+ 
+.sec1{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 80%;
+    height: 170%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0.8;
+    z-index: 1;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+.sec1 p{
+    font: 20px 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    opacity: 1;
+}
+.globeViz{
+    position: static;
+    display: block;
+    
+}
+h3{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    font: 30px 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    opacity: 1;
+    z-index: 1;}
+}
+
+  </style>
+
+  <script src="//unpkg.com/d3"></script>
+  <!-- <script src="new/js/three.js"></script> 
+  <script src="new/js/orbit_controls.js"></script>  -->
+
+  <script src="//unpkg.com/globe.gl"></script>
+  <!--<script src="../../dist/globe.gl.js"></script>-->
+  <link a href="about.html"></a>
+</head>
+
+<body>
+  <div id="globeViz"></div>
+ <div class="navbar">
+  <nav>
+    <!-- <img src="{{url_for('static', filename='smkqt3.jfif')}}" style="width: 15%; " alt="smoke" > -->
+    <div class="nav">
+        <img class="dropbtn" src="{{url_for('static', filename='menu.png')}} ">
+
+        <div class="drop-cnt">
+            <img src="{{url_for('static', filename='mml.png')}}" style="width: 3%; right: 0; display: block; background-color: black;border: 0px;" alt="smoke" >
+            <a href='/'>Home</a>
+            <a href='/Faiz'>Harcasacde</a>
+            <a href='/Anas'>Smoking</a>
+            
+            <a href='/Kaif'>Har vs Yolo</a>
+            <a href='/Mujahid'>Project-details</a>
+        </div>
+</nav>
+ </div>
+<h3>Cancer caused due to smoking</h3>
+ <div class="sec1">
+  <h1>Smoking</h1>
+  <p>Tobacco has been around for centuries, but what we know about the health damage from smoking is much newer. For example, smokers tend to die more than 10 years earlier than people who don’t smoke. You can improve your health by choosing to quit smoking.</p>
+  <br><br><br>
+<h2>Is smoking bad for your health?</h2>
+<p>Since at least the 1950s, health experts have linked smoking to lung cancer. Research continues to pinpoint more ways tobacco harms your health, from cancers to chronic (long-term) diseases.
+
+  Experts estimate that 16 million Americans live with a disease caused by smoking. Every year, roughly 480,000 people die from smoking-related diseases. That means that for every person who dies from smoking, at least 30 others live with a serious smoking-related illness.</p> 
+  <br><br><br>
+<h2>Are other forms of tobacco safer?</h2>
+<p>Many people believe that smoking a cigar is safer than smoking a cigarette. But, cigar smokers face many of the same potential risks as cigarette smokers, including cancer. Chewing tobacco or smokeless tobacco products are not safer than cigarettes, either. Smokeless tobacco contains almost 30 cancer-causing chemicals.
+
+  E-cigarettes (vapes), an emerging form of nicotine delivery, differ from traditional tobacco products. Vaping delivers more concentrated nicotine than cigarettes in a smokeless inhaled mist (vapor). Health risks from vape products range from asthma to chronic obstructive pulmonary disease and cancer.</p>
+  <br><br><br>
+</div>
+
+  <script>
+  const weightColor = d3.scaleLinear()
+    .domain([0.100000000, 600000])
+    .range(['darkblue', 'darkred'])
+    .clamp(true);
+  //  controls =   ([
+  //     { description: 'Rotate', key: 'altKey', value: true },
+  //     { description: 'Zoom', key: 'ctrlKey', value: true },
+  //     { description: 'Pan', key: 'shiftKey', value: true },
+  //   ])
+
+  const myGlobe = Globe()
+    .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+    .globeImageUrl('static/anas/daymap.jpg')
+    .bumpImageUrl('static/anas/specularmap.jpg')
+    .showAtmosphere(true)
+    .hexBinPointLat(d => d.Latitude)
+    .hexBinPointLng(d => d.Longitude)
+    .hexTransitionDuration(10)
+    
+    .hexBinPointWeight(d => d.val)
+    .hexAltitude(({ sumWeight }) => sumWeight * 0.54)
+    .hexTopColor(d => weightColor(d.sumWeight))
+    .hexSideColor(d => weightColor(d.sumWeight))
+    .hexBinResolution(3.5)
+    
+    .hexLabel(d => `
+      <b>${d.points.length}</b > val: <ul><li>
+        ${d.points.slice().sort((a, b) => b.val - a.val).map(d => d.val).join('</li><li>')}
+      </li></ul>
+    `)
+    (document.getElementById('globeViz'));
+
+  fetch('static/anas/cancer.json').then(res => res.json()).then(cancer => {
+    myGlobe.hexBinPointsData(cancer);
+  });
+  myGlobe.controls().autoRotate = true;
+  myGlobe.controls().autoRotateSpeed = 0.2;
+
+</script>
+
+  <!-- 
+  <script>
+
+
+
+
+
+
+const colorScale = d3.scaleOrdinal(['orangered', 'mediumblue', 'darkgreen', 'yellow']);
+
+const labelsTopOrientation = new Set(['Apollo 12', 'Luna 2', 'Luna 20', 'Luna 21', 'Luna 24', 'LCROSS Probe']); // avoid label collisions
+
+const elem = document.getElementById('globeViz');
+const moon = Globe()
+  .globeImageUrl('moon_color.jpg')
+  .bumpImageUrl('moon_dis.jpg')
+  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  .showGraticules(true)
+  .showAtmosphere(false) // moon has no atmosphere
+  .labelText('label')
+  .labelSize(1.7)
+  .labelDotRadius(0.4)
+  .labelDotOrientation(d => labelsTopOrientation.has(d.label) ? 'top' : 'bottom')
+  .labelColor(d => colorScale(d.agency))
+  .labelLabel(d => `
+      <div><b>${d.label}</b></div>
+      <div>${d.agency} - ${d.program} Program</div>
+      <div>Landing on <i>${new Date(d.date).toLocaleDateString()}</i></div>
+    `)
+  .onLabelClick(d => window.open(d.url, '_blank'))
+  (elem);
+
+fetch('./new.json').then(r => r.json()).then(landingSites => {
+  moon.labelsData(landingSites);
+});
+</script> -->
+
+
+</body>

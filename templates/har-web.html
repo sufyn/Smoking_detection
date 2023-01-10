@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JOURNEY</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  </head>
+  <style>
+    h1{
+      text-align: center;
+      font-size: 50px;
+      color: orange;
+      padding-top: 100px;
+    }
+  section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+  }  
+  .s1,.s2{
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    font-size: 20px;
+  }
+  p{
+    height: 350px;
+    box-shadow: 0 0 10px 0 rgba(248, 161, 80, 0.959);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgb(121, 116, 116);
+  }
+  </style>
+  <body>
+<nav><div class="nav">
+  <img class="dropbtn" src="{{url_for('static', filename='menu.png')}}" >
+
+  <div class="drop-cnt">
+  <a href='/'>Home</a>
+  <a href='/Mujahid'>Project-details</a>
+  <a href='/Kaif'>Har vs Yolo</a>
+  <a href='/Faiz'>Harcasacde</a>
+  <a href='/Anas'>Smoking</a>
+</div>
+</nav></div>
+<div class="sec2">
+            
+  <h1>Smoking Detection using Haarcascade</h1>
+
+</div>
+<br><br><br><br><br>
+<div class="video" >
+  <input type="submit" onclick="st()" style="margin: 10px; transform: translateY(400px); " id="strt" class="submit" value="Start">
+  <!-- <input type="submit" onclick="sp()" id="stp" class="submit" name="stp" value="stop"  style="margin: 10px; transform: translateY(400px); "> -->
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="/Faiz" class="submit" style="padding:10px;margin: 10px; color: white;text-decoration: none; border: 1px solid orange; z-index:20px; " >Stop</a>
+<img id="im" src="{{url_for('vd_feed')}}" style=" width: 50%;  display: none;  padding: 10px;margin-left: 25%; "  >
+</div>
+  </body>
+<script>
+          
+          function st(){
+                    document.getElementById("im").style.display="block";
+                }
+        function sp(){
+            document.getElementById("im").style.display="none";
+        }
+</script>
+  </html>

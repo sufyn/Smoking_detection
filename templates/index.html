@@ -1,46 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <title>Smoking Detection</title>
+    <link rel="icon" href="{{url_for('static', filename='mml.png')}}" type="image/x-icon">
+    <title>Yolo model</title>
 </head>
-<body>
-    <nav><div class="nav">
-        <img class="dropbtn" src="{{url_for('static', filename='menu.png')}}" >
 
-        <div class="drop-cnt">
-        <a href='/Mujahid'>Project-details</a>
-        <a href='/Kaif'>Journey</a>
-        <a href='/Faiz'>Smoking</a>
-        <a href='/Anas'>Future</a>
+<body>
+    <nav>
+        <!-- <img src="{{url_for('static', filename='smkqt3.jfif')}}" style="width: 15%; " alt="smoke" > -->
+        <div class="nav">
+            <img class="dropbtn" src="{{url_for('static', filename='menu.png')}}">
+
+            <div class="drop-cnt">
+                <img src="{{url_for('static', filename='mml.png')}}" style="width: 3%; right: 0; display: block; background-color: black;border: 0px;" alt="smoke" >
+                <a href='/'>Home</a>
+                <a href='/Faiz'>Harcasacde</a>
+                <a href='/Anas'>Smoking</a>
+                
+                <a href='/Kaif'>Har vs Yolo</a>
+                <a href='/Mujahid'>Project-details</a>
+            </div>
+    </nav>
     </div>
-    </nav></div>
 
     <section>
         <div class="sec1">
-        
-        <img src="{{url_for('static', filename='smk.gif')}}" alt="smoke" >
-        <h1>
-            
-            <span>Smoking Detection</span></h1>
-    </div>
+
+            <img src="{{url_for('static', filename='smk.gif')}}" alt="smoke">
+            <h1>
+
+                <span>Smoking Detection</span>
+            </h1>
+        </div>
     </section>
     <br>
+    <h2 id="h2">Steps For Image Detection Usind Yolo</h2>
+    <section class="s2">
+
+        <div class="c1">
+            <h4>Step: 1</h4>
+            <p>Select an image for detection</p>
+        </div>
+        <div class="c1">
+            <h4>Step: 2</h4>
+            <p>By clicking on the button, Upload It!!</p>
+        </div>
+        <div class="c1">
+            <h4>Step: 3</h4>
+            <p>U get the detected image.U can retry!!</p>
+        </div>
+    </section>
+    <!-- <img class="imgyolo" src="{{url_for('static', filename='yolochart.png')}}" alt="yolo"  > -->
     <section>
         <div class="sec2">
-            <h1>Smoking Detection using harcascade</h1>
-            <video src="{{url_for('static', filename='videoplayback.mp4')}}" autoplay muted controls ></video>
-        
-        <br><br>
-        <model-viewer src="cigarette.mb" alt="A 3D model of an astronaut" auto-rotate camera-controls></model-viewer>
-        <form action="{{url_for('after')}}" method="POST" enctype="multipart/form-data">
-            <input type="file" class="file" name="file1">
-            <input type="submit" class="submit" value="Upload">
-            <p class="cont" >Choose image file to upload</p>
-        </form>
+            <h1>Smoking Detection using YOLO CNN MODEL</h1>
+            <video src="{{url_for('static', filename='smk-vid.mp4')}}" autoplay muted controls></video>
+
+
+            <!-- <model-viewer src="cigarette.mb" alt="A 3D model of an astronaut" auto-rotate camera-controls></model-viewer>
+         <br> -->
+
+
+            <div class="sec3">
+                <div class="vapour">
+                    <span style="--i:1;"></span>
+                    <span style="--i:4;"></span>
+                    <span style="--i:10;"></span>
+                    <span style="--i:3;"></span>
+                    <span style="--i:6;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:5;"></span>
+                    <span style="--i:9;"></span>
+                    <span style="--i:7;"></span>
+                    <span style="--i:8;"></span>
+                    <span style="--i:11;"></span>
+                </div>
+                <div class="de">
+                <form action="{{url_for('yolo_after')}}" method="POST" enctype="multipart/form-data">
+                    <input type="file" class="file" name="file2">
+                    <input type="submit" class="submit" value="Upload">
+
+                    <p class="cont">Choose Image File To Upload</p>
+                    
+                    <!-- <video  id="video" autoplay ></video> -->
+                    <a href="/yolo-web" class="web"  >Webcam</a>
+                    <p class="cont" style="margin-left: 50px;" >Click To Detect Live</p>
+                </form>
+            </div>
+            </div>
+
+
+            <br>
+            <div class="detect">
+                <h3>Before Image</h3>
+                <img class="bef-img" src="{{url_for('static', filename='yolo-bef.jpg')}}" alt="image">
+
+                <h3>Detected Image</h3>
+                <img class="aft-img" src="{{url_for('static', filename='yolo-aft.jpg')}}" alt="image">
+                
+            </div>
+           
         </div>
+        </section>
+        <footer>
+            <img href="https://github.com/sufyn/Smoking_detection" src="{{url_for('static', filename='git.png')}}">
+            <a href="https://github.com/sufyn/Smoking_detection">Github</a>
+        </footer>
+        <video src="{{url_for('open_webcam')}}"  autoplay></video>
 </body>
+<script>
+    var dropbtn = document.querySelector('.dropbtn');
+    var dropcnt = document.querySelector('.drop-cnt');
+    dropbtn.addEventListener('click', function () {
+        dropcnt.classList.toggle('show');
+    })
+
+   
+</script>
 </html>

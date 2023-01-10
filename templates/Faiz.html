@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">  -->
+    <link rel="icon" href="{{url_for('static', filename='mml.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='faiz/smk.css')}}">
+    <title>Smoking Detection</title>
+</head>
+<!-- <style>
+    /* display loading gif and hide webpage */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, .8) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+    }
+
+    /* prevent scrollbar from display during load */
+    body.loading {
+        overflow: hidden;
+    }
+
+    /* display the modal when loading class is added to body */
+    body.loading .modal {
+        display: block;
+    }
+</style> -->
+
+<body>
+
+    <!-- <nav><div class="nav">
+        <img class="dropbtn" src="{{url_for('static', filename='menu.png')}}" >
+
+        <div class="drop-cnt">
+            <img src="{{url_for('static', filename='mml.png')}}" style="width: 3%;display: block; right: 0;background-color: black;border: 0px;" alt="smoke" >
+        <a href='/'>Home</a>
+        <a href='/Mujahid'>Project-details</a>
+        <a href='/Kaif'>Har vs Yolo</a>
+        <a href='/Faiz'>Harcasacde</a>
+        <a href='/Anas'>Smoking</a>
+    </div>
+    </nav></div>
+    <h1>Smoking Detection using harcascade</h1>
+    -->
+    <div class="container">
+
+        <div class="v">
+            <video class="back-video" autoplay loop muted plays-inline src="{{url_for('static', filename='lnk.mp4')}}">
+            </video>
+            <br>
+            <video class="back-video" autoplay loop muted plays-inline src="{{url_for('static', filename='lnk.mp4')}}">
+            </video>
+        </div>
+        <nav style="background-color: none;">
+            <img class="dropbtn" src="{{url_for('static', filename='menu.png')}}">
+
+            <img src="{{url_for('static', filename='mml.png')}}" class="logo">
+            <div class="drop-cnt">
+                <ul>
+                    <li><a href='/'>Home</a>
+                    <li><a href='/Mujahid'>Project-details</a></li>
+                    <li><a href='/Kaif'>Har vs Yolo</a></li>
+                    <li><a href='/Faiz'>Harcasacde</a></li>
+                    <li><a href='/Anas'>Smoking</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <h1 style="position: relative;">HAARCASCADE</h1>
+            <a href="#har" style="position: relative;">Do not click me</a>
+        </div>
+    </div>
+
+
+    <!-- <h1>
+            
+            <span>Smoking Detection</span></h1>
+     -->
+    <br>
+    <h2 style="position: relative;margin-left:30% ;color: white;" id="h2">Steps For Image Detection Usind Haarcascade
+    </h2>
+    <section class="s2" style="position: relative;">
+
+        <div class="c1">
+            <h4>Step: 1</h4>
+            <p>Select an image for detection</p>
+        </div>
+        <div class="c1">
+            <h4>Step: 2</h4>
+            <p>By clicking on the button, Upload It!!</p>
+        </div>
+        <div class="c1">
+            <h4>Step: 3</h4>
+            <p>U get the detected image.U can retry!!</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="sec2" id="har">
+
+
+            <!-- <br><br>
+        <model-viewer src="cigarette.mb" alt="A 3D model of an astronaut" auto-rotate camera-controls></model-viewer>
+         -->
+            <form action="{{url_for('after')}}" method="POST" enctype="multipart/form-data">
+                <input type="file" class="file" name="file1" style="position: relative;">
+                <input type="submit" class="submit" value="Upload" style="position: relative;">
+
+                <p class="cont" style="position: relative;">Choose image file to upload</p>
+            </form>
+
+
+            <!-- <img src="{{url_for('static', filename='cigarette-smoke.gif')}}" alt="gif" >     -->
+        </div>
+    </section>
+    <br>
+    <div class="detect">
+
+        <h3 style="position: relative;">Before Image</h3>
+        <img style="position: relative;" class="bef-img" src="{{url_for('static', filename='har-bef.jpg')}}"
+            alt="image">
+
+        <h3 style="position: relative;">Detected Image</h3>
+        <img class="aft-img" style="position: relative;" src="{{url_for('static', filename='har-aft.jpg')}}"
+            alt="image">
+
+    </div>
+    <div class="vd">
+        <!-- <form action="{{url_for('har_vd')}}" method="POST" enctype="multipart/form-data">
+            <video class="vid"  controls></video> 
+            
+        </form>    -->
+
+        <video id="video" autoplay style="position: relative;"></video>
+        <a href="/har-web" class="submit" style=" text-decoration: none;margin: 60px;position: relative;">Webcam</a>
+        <input type="submit" onclick="change()" class="submit" id="btnChangeCamera" value="turn camera"
+            style="position: relative;">
+        <input type="submit" onclick="strt()" class="submit" id="strt" value="start" style="position: relative;">
+        <input type="submit" onclick="stp()" class="submit" id="stp" value="stop" style="position: relative;">
+        <p style="position: relative;" class="cont">click to detect live</p>
+        <!-- <canvas class="canvas" style="display: none;"></canvas> -->
+        <form action="{{url_for('har_vd')}}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" capture="environment" style="position: relative;">
+            <input type="file" name="image" accept="image/*" capture="user" style="position: relative;">
+        </form>
+    </div>
+    <footer>
+        <img href="https://github.com/sufyn/Smoking_detection" src="{{url_for('static', filename='git.png')}}">
+        <a href="https://github.com/sufyn/Smoking_detection">Github</a>
+    </footer>
+
+    <script>
+        // document.body.classList.add('loading');
+        //        (function () {
+        //   if (
+        //     !"mediaDevices" in navigator ||
+        //     !"getUserMedia" in navigator.mediaDevices
+        //   ) {
+        //     alert("Camera API is not available in your browser");
+        //     return;
+        //   }
+
+        //   // get page elements
+        const video = document.querySelector("#video");
+        //   const start = document.querySelector("#strt");
+        //   const stop = document.querySelector("#stp");
+        //   const btnChangeCamera = document.querySelector("#btnChangeCamera");
+        //video constraints
+        const constraints = {
+            video: true
+        }
+        //   // video constraints
+        //   const constraints = {
+        //     video: {
+        //       width: {
+        //         min: 1280,
+        //         ideal: 1920,
+        //         max: 2560,
+        //       },
+        //       height: {
+        //         min: 720,
+        //         ideal: 1080,
+        //         max: 1440,
+        //       },
+        //     },
+        //   };
+
+        // use front face camera
+        let useFrontCamera = true;
+
+        //   // current video stream
+        //   let videoStream;
+
+        //   // handle events
+        //   // play
+        //   start.addEventListener("click", function () {
+        //     video.play();
+        //     // btnPlay.classList.add("is-hidden");
+        //     // btnPause.classList.remove("is-hidden");
+        //   });
+
+        //   // stop
+        //   stop.addEventListener("click", function () {
+        //     video.srcObject = null;
+        //          });
+
+        //   // switch camera
+        //   btnChangeCamera.addEventListener("click", function () {
+        //     useFrontCamera = !useFrontCamera;
+
+        //     initializeCamera();
+        //   });
+
+        // stop video stream
+        function stopVideoStream() {
+            if (videoStream) {
+                videoStream.getTracks().forEach((track) => {
+                    track.stop();
+                });
+            }
+        }
+
+        // initialize
+        async function initializeCamera() {
+            stp();
+            constraints.video.facingMode = useFrontCamera ? "user" : "environment";
+        }
+        //     // try {
+        //     //   videoStream = await navigator.mediaDevices.getUserMedia(constraints);
+        //     //   video.srcObject = videoStream;
+        //     // } catch (err) {
+        //     //   alert("Could not access the camera");
+        //     // }
+        //   }
+
+        //   initializeCamera();
+        // })();
+
+
+        const img = document.getElementsByClassName('img');
+        // const canvas = document.getElementsByClassName('canvas');
+        // const context = canvas.getContext('2d');
+
+
+        function strt() {
+            document.querySelector('submit');
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then((stream) => {
+                    video.srcObject = stream;
+                });
+            
+        }
+        function stp() {
+            document.querySelector('stp');
+            constraints.video = false;
+            video.srcObject = null;
+
+        }
+        function change() {
+            document.querySelector('btnChangeCamera');
+            useFrontCamera = !useFrontCamera;
+            initializeCamera();
+        }
+
+        // function onOpenCvReady() {
+        //     document.body.classList.remove('loading');
+        // }
+    </script>
+    <!-- <script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script> -->
+    <!-- <img src="{{url_for('static', filename='cigarette-smoke.gif')}}" alt="gif" >     -->
+</body>
+
+</html>

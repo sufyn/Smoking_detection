@@ -79,7 +79,8 @@
     }
     
     .sec2 h1{
-        transform: translate(1%,-290%);
+        
+        transform: translate(25%,-430%);
         text-transform: capitalize;
         text-shadow: rgb(248, 232, 0) 0px 0px 10px;
         font-size: 50px;
@@ -89,27 +90,35 @@
         padding: 10px;
        }
        .retry{
+        position: absolute;
         color: aliceblue;
         border: 1px solid rgb(255, 154, 23);
         padding: 10px;
-        
+        text-decoration: none;
         border-radius: 8px;
     }
     .retry:hover{
+
         background-color: rgb(255, 154, 23);
         color: rgb(0, 0, 0);
     }
     .bef-img{
-        width: 40%;
-        height: 40%;
-        transform: translate();
-        
+        z-index: 1;
+        width: 30%;
+        height: 30%;
     }
     .aft-img{
-        width: 40%;
-        height: 40%;
-        position: absolute;
-        z-index: -1;
+        width: 35%;
+        height: 35%; 
+        z-index: 1; 
+    }
+    .detect{
+        margin-top: 140px;
+        display: flex;
+        flex-direction: row;
+    }
+    .detect h3{
         
+        color: aliceblue;
     }
 }

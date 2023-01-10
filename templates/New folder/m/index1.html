@@ -1,0 +1,196 @@
+<head>
+    <style> body { margin: 0; 
+    
+  } 
+  .navbar{
+      
+    position: absolute;
+    top: 5;
+    left: -10;
+  }
+  li{
+    padding: 15;
+    text-decoration: none;
+  }
+  .opt1,.opt2,.opt4,.opt5,.opt3{
+    font-size: 15;
+    padding: 10px;
+    text-decoration: none;
+    color: aqua;
+    border: 2px solid aqua;
+    border-radius: 8px; ;  
+  }
+  .opt1:hover,.opt4:hover,.opt5:hover,.opt2:hover{
+    background-color: rgb(157, 140, 172);
+    
+  }
+  
+  .opt3{
+      
+      margin-top: 160px;
+       background-color: rgb(157, 140, 172);
+       }
+  .simg{
+    position: absolute;
+    right: 20;
+    bottom: 60;
+  }
+  .s1{
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    right: 10;
+    bottom: 10;
+  }
+  .s2{
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    right: 80;
+    bottom: 80;
+  }
+  .s3{
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    right: 180;
+    bottom: 10;
+  }
+  .s4{
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    right: 240;
+    bottom: 80;
+  }
+  #image{
+    
+   padding-bottom: 10;
+   padding-left: 10;
+    width: 20%;
+    border-radius: 100%;
+  }
+  #image:hover{
+  opacity: 0.5;
+  }
+  
+  @media all and (max-width:768px) and (min-width:175px)
+  {
+    
+  
+  
+  }
+  
+    </style>
+  
+    <script src="//unpkg.com/d3"></script>
+    <!-- <script src="new/js/three.js"></script> 
+    <script src="new/js/orbit_controls.js"></script>  -->
+  
+    <script src="//unpkg.com/globe.gl"></script>
+    <!--<script src="../../dist/globe.gl.js"></script>-->
+    <link a href="about.html"></a>
+  </head>
+  
+  <body>
+    <div id="globeViz"></div>
+   <div class="navbar">
+    <ul>
+      <!-- <a  href="https://github.com/sufyn"><img id="image" src="lm.png"> </a> -->
+      <li><a class="opt2" href="index.html">Old project </a></li>
+      <li><a class="opt1" href="about.html">Wanna know more about moon?? CLICK  ME </a></li>
+          
+      <li><a class="opt5" href="mission.html">Lunar Landings</a></li>    
+      <li><a class="opt4" href="https://github.com/sufyn">About</a></li>
+      <li><div class="opt3" id="opt3"><br>Click on points or bars to know about depths.<br><br></div></li>    
+  
+    </ul>
+   </div>
+   <!-- <img class="simg" src="scale2.jpg"  alt="scale"> -->
+   <div class="s1"> Shallow moonquakes<br> (50-220 kilometers <br>below the surface)
+    <div class="s2">Deep moonquakes (~700 km below the surface)</div>
+    <div class="s3">Thermal moonquakes</div> 
+    <div class="s4">Meteorite impact vibrations</div>
+  
+  </div>
+    
+    <script>
+    const weightColor = d3.scaleLinear()
+      .domain([0.100000000, 600000])
+      .range(['darkblue', 'darkred'])
+      .clamp(true);
+    //  controls =   ([
+    //     { description: 'Rotate', key: 'altKey', value: true },
+    //     { description: 'Zoom', key: 'ctrlKey', value: true },
+    //     { description: 'Pan', key: 'shiftKey', value: true },
+    //   ])
+  
+    const myGlobe = Globe()
+      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+      .globeImageUrl('daymap.jpg')
+      .bumpImageUrl('specularmap.jpg')
+      .showAtmosphere(false)
+      .hexBinPointLat(d => d.Latitude)
+      .hexBinPointLng(d => d.Longitude)
+      .hexTransitionDuration(10)
+      
+      .hexBinPointWeight(d => d.val)
+      .hexAltitude(({ sumWeight }) => sumWeight * 0.54)
+      .hexTopColor(d => weightColor(d.sumWeight))
+      .hexSideColor(d => weightColor(d.sumWeight))
+      .hexBinResolution(3.5)
+      
+      .hexLabel(d => `
+        <b>${d.points.length}</b > val: <ul><li>
+          ${d.points.slice().sort((a, b) => b.val - a.val).map(d => d.val).join('</li><li>')}
+        </li></ul>
+      `)
+      (document.getElementById('globeViz'));
+  
+    fetch('cancer.json').then(res => res.json()).then(cancer => {
+      myGlobe.hexBinPointsData(cancer);
+    });
+    myGlobe.controls().autoRotate = true;
+    myGlobe.controls().autoRotateSpeed = 0.2;
+  
+  </script>
+  
+    <!-- 
+    <script>
+  
+  
+  
+  
+  
+  
+  const colorScale = d3.scaleOrdinal(['orangered', 'mediumblue', 'darkgreen', 'yellow']);
+  
+  const labelsTopOrientation = new Set(['Apollo 12', 'Luna 2', 'Luna 20', 'Luna 21', 'Luna 24', 'LCROSS Probe']); // avoid label collisions
+  
+  const elem = document.getElementById('globeViz');
+  const moon = Globe()
+    .globeImageUrl('moon_color.jpg')
+    .bumpImageUrl('moon_dis.jpg')
+    .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+    .showGraticules(true)
+    .showAtmosphere(false) // moon has no atmosphere
+    .labelText('label')
+    .labelSize(1.7)
+    .labelDotRadius(0.4)
+    .labelDotOrientation(d => labelsTopOrientation.has(d.label) ? 'top' : 'bottom')
+    .labelColor(d => colorScale(d.agency))
+    .labelLabel(d => `
+        <div><b>${d.label}</b></div>
+        <div>${d.agency} - ${d.program} Program</div>
+        <div>Landing on <i>${new Date(d.date).toLocaleDateString()}</i></div>
+      `)
+    .onLabelClick(d => window.open(d.url, '_blank'))
+    (elem);
+  
+  fetch('./new.json').then(r => r.json()).then(landingSites => {
+    moon.labelsData(landingSites);
+  });
+  </script> -->
+  
+  
+  </body>

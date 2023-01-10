@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Yolo vs Haarcascade</title>
+</head>
+<style>
+    * {
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: big john;
+    width: 100%;
+    height: 100vh;
+}
+
+h2{
+    font-size: 60px;
+    /* background-color: black; */
+    padding: 8px 24px;
+    border-radius: 16px;
+} 
+
+div:nth-child(1) {
+    text-align: left;
+    background: url(images/vm.jpg);
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 50%;
+    background-size:200*400;
+    background-repeat: no-repeat;
+    /* background-attachment:fixed ; */
+}
+div:nth-child(2)
+{ 
+background-color: black;
+background-image: url(images/db.jpg);
+
+}
+.content p{
+font-size: 15px;
+
+}
+
+.flow {
+background-image: url(images/hc.png);
+background-repeat: no-repeat;
+background-position: left;
+
+}
+</style>
+<body>
+    
+
+<div><h2> Yolo Vs Haarcascade</h2></div>
+<div><h2>Smoking Kills</h2></div>
+<div class="content">  <p align="center">
+    HAARCASCADE<br>
+    Haar cascade is an algorithm that can detect objects in images,
+     irrespective of their scale in image and location.<br>
+
+This algorithm is not so complex and can run in real-time. We can train a haar-cascade detector
+ to detect various objects like cars, bikes, buildings, fruits, etc.<br>
+
+Haar cascade uses the cascading window, and it tries to compute features in every window and 
+classify whether it could be an object.<br>
+
+YOLO<br>
+YOLO(you look Only Once) is method of object detection<br>
+It is the algorithm/stratergy behind how the code is going to detect objects in the image.<br>     
+
+Earlier detection frameworks,looked at differnt parts of the image multiple<br>
+times at different scales and repurposed image classification technique to detect objects.<br>
+YOLO Vs Haarcascade<br>
+Results in our project i.e Smoking Detection <br>
+    give us the confidence that smoke at some instance is 
+missed or wrong detected by Haar cascade can be detected using YOLO based detection.<br>
+Although Haar cascade shows a faster processing in frames per second than YOLO but lacks in accuracy. </p>
+    </div>
+<div class="flow"><img src="yolo.webp" alt=""></div>
+
+<script> src="main.js"</script>
+</body>
+</html>

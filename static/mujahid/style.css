@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.main{
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(tt.webp);
+    background-size: cover;
+    background-position: center;
+    
+}
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+.icon{
+    width: 200px;
+    float: left;
+    height: 70px;
+}
+.logo{
+    color:lightslategray;
+    float: left;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    padding-top: 10px;
+    
+}
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+ul li a:hover{
+    color: lightslategray;
+}
+.search{
+    width: 330px;
+    float: left;
+    margin-left: 270px;
+    
+}
+.srch{
+    font-family: 'Times New Roman';
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid lightslategray;
+    margin-top: 13px;
+    color: #fff;
+    border-right:none ;
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    background: lightslategray;
+    border: 2px solid lightslategray;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 16px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+.btn:focus{
+    outline: none;
+}
+.srch:focus{
+    outline: none;
+}
+#container{
+    display: flex;
+    
+    
+
+}
+#container div{
+    background-color: lightcyan;
+    margin: 40px;
+    margin-top: 100px;
+    width: 100%;
+    border-radius: 10px;
+}
+.header{
+    color: lightgray;
+    margin-left: 600px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-style: italic;
+}

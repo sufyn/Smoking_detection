@@ -1,15 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JOURNEY</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-<h1 style="background-color: blue;" >JOURNEY</h1> 
-    <a href='/Mujahid'>mujahid</a>
-    <a href='/'>Home</a>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="icon" href="{{url_for('static', filename='mml.png')}}" type="image/x-icon">
+  <title>Har vs Yolo</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="kaif/assets/img/favicon.png" rel="icon">
+  <link href="kaif/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='kaif/assets/vendor/animate.css/animate.min.css')}}"  rel="stylesheet">
+  <link href="{{url_for('static', filename='kaif/assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='kaif/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='kaif/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"  rel="stylesheet">
+  <link href="{{url_for('static', filename='kaif/assets/vendor/boxicons/css/boxicons.min.css')}}"  rel="stylesheet">
+  <link href="{{url_for('static', filename='kaif/assets/vendor/glightbox/css/glightbox.min.css')}}"  rel="stylesheet">
+  <link href="{{url_for('static', filename='kaif/assets/vendor/swiper/swiper-bundle.min.css')}}"  rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+
+  <link rel="stylesheet" href="{{url_for('static', filename='kaif/style.css')}}">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v4.9.1
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <img src="{{url_for('static', filename='mml.png')}}" style="width: 3%;display: block; margin: 10px;" alt="smoke" >
+      <div class="logo me-auto">
+        
+        <h1><a href="index.html">Yolo vs haarcascade</a></h1>
+        
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/Faiz">Haarcascade</a></li>
+          <li><a class="nav-link scrollto" href="/Anas">Smoking</a></li>
+          <li><a class="nav-link scrollto" href="/Kaif">Haar vs Yolo</a></li>
+          <li><a class="nav-link scrollto" href="/Mujahid">Project-details</a></li>
+         
+      
+      </nav>
+
+    </div>
+  </header>End Header
+
+  <!-- ======= slides section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 --> 
+          <div class="carousel-item active" style="background-image: url('static/kaif/assets/img/slide/slide-1.png');">
+            
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Smoking detection <span>Haarcascade</span></h2>
+                <p class="animate__animated animate__fadeInUp">Haar cascade is an algorithm that can detect objects in images, irrespective of their scale in image and location.
+This algorithm is not so complex and can run in real-time. We can train a haar-cascade detector to detect various objects like cars, bikes, buildings, fruits, etc.
+Haar cascade uses the cascading window, and it tries to compute features in every window and classify whether it could be an object.
+</p>
+                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url('static/kaif/assets/img/slide/slide-2.jpg');">
+            
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Smoking Detection with YOLO</h2>
+                <p class="animate__animated animate__fadeInUp">YOLO is an algorithm that uses neural networks to provide real-time object detection. This algorithm is popular because of its speed and accuracy. It has been used in various applications to detect traffic signals, people, parking meters, and animals.
+                  YOLO is an abbreviation for the term ‘You Only Look Once’. This is an algorithm that detects and recognizes various objects in a picture (in real-time). Object detection in YOLO is done as a regression problem and provides the class probabilities of the detected images.
+                  </p>
+                <a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url('static/kaif/assets/img/slide/slide-3.gif');">
+            
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">YOLO Vs Haarcascade</h2>
+                <p class="animate__animated animate__fadeInUp">Results in our project i.e Smoking Detection <br>
+                  give us the confidence that smoke at some instance is 
+              missed or wrong detected by Haar cascade can be detected using YOLO based detection.<br>
+              Although Haar cascade shows a faster processing in frames per second than YOLO but lacks in accuracy.</p>
+                <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End slides section -->
+
+  <main id="main">
+
+    <!-- ======= Haarcascade Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 video-box">
+            
+
+            <img src="{{url_for('static', filename='kaif/assets/img/about.gif')}}" class="img-fluid" style="margin:5%;">
+            <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a> -->
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+
+            <div class="section-title">
+              <h2>Haarcascade</h2>
+              <p>Sample haar features traverse in window-sized across the picture to compute and match features.<br>
+                Haar cascade works as a classifier. It classifies positive data points. <br><br><br><br>→ that are part of our detected object and negative data points<br> → that don’t contain our object.<br>
+                •	Haar cascades are fast and can work well in real-time.<br>
+                •	Haar cascade is not as accurate as modern object detection techniques are.<br>
+                •	Haar cascade has a downside. It predicts many false positives.<br>
+                •	Simple to implement, less computing power required.<br>
+                </p>
+            </div>
+            <br><br><br><br>
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="">Pre-trained Haar Cascades</a></h4>
+        
+              <p class="description"> OpenCV library manages a repository containing all popular haar cascades that can be used for:<br>
+                •	Human face detection<br>
+                •	Eye detection<br>
+                •	Nose / Mouth detection<br>
+                •	Vehicle detection<br>
+                </p>
+            </div>
+
+            <!-- <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div> -->
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Haarcascade Section -->
+    <br><br><br><br>
+    <!-- ======= YOLO Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 video-box">
+            <img src="{{url_for('static', filename='kaif/assets/img/el.gif')}}" class="img-fluid" style="margin: 10%;">
+            <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a> -->
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+
+            <div class="section-title">
+              <h2>YOLO</h2>
+              <p>YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time. As the name suggests, the algorithm requires only a single forward propagation through a neural network to detect objects.<br><br>
+                This means that prediction in the entire image is done in a single algorithm run. The CNN is used to predict various class probabilities and bounding boxes simultaneously.
+                <br><br><br><br>      
+                Why the YOLO algorithm is important<br>
+YOLO algorithm is important because of the following reasons:<br>
+•	Speed: This algorithm improves the speed of detection because it can predict objects in real-time.<br>
+•	High accuracy: YOLO is a predictive technique that provides accurate results with minimal background errors.<br>
+•	Learning capabilities: The algorithm has excellent learning capabilities that enable it to learn the representations of objects and apply them in object detection.<br>
+
+                </p>
+            </div>
+            <br><br><br><br>
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="">How the YOLO algorithm works</a></h4>
+        
+              <p class="description"> YOLO algorithm works using the following three techniques:<br>
+                •	Residual blocks<br>
+                •	Bounding box regression<br>
+                •	Intersection Over Union (IOU)<br>
+                
+                </p>
+            </div>
+
+            <!-- <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div> -->
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End YOLO Section -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <!-- Vendor JS Files -->
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/purecounter/purecounter_vanilla.js')}} "></script>
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/aos/aos.js')}}" ></script>
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}" ></script>
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"  ></script>
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/swiper/swiper-bundle.min.js')}}"  ></script>
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/glightbox/js/glightbox.min.js')}}"  ></script>
+  <script  src="{{url_for('static', filename='kaif/assets/vendor/php-email-form/validate.js')}}"  ></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='kaif/assets/js/main.js')}}"></script>
+  <footer>
+    <img href="https://github.com/sufyn/Smoking_detection" src="{{url_for('static', filename='git.png')}}">
+    <a href="https://github.com/sufyn/Smoking_detection">Github</a>
+</footer>
+</body>
+
 </html>

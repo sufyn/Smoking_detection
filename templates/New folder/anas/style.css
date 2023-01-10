@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu{
+    width: 400px;
+    float: left;
+    height: 70px;
+
+}
+
+ul{
+    float: right;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+ul li{
+    list-style: none;
+    margin-right: 22px;
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+ul li a{
+    text-decoration: underline;
+    color: rgb(240, 243, 247);
+    font-family: arial;
+    font-weight: 400;
+    transition: o.4s ease-in-out;
+    font-size:medium;
+    float: left; 
+}
+
+ul li a:hover{
+    color:brown
+}

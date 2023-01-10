@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='after.css')}}">
+    <title>Smoking Detection</title>
+</head>
+<body>
+    <nav><div class="nav">
+        <img class="dropbtn" src="menu.png" >
+
+        <div class="drop-cnt">
+            <a href='/'>Home</a>
+            <a href='/Mujahid'>Project-details</a>
+            <a href='/Kaif'>Har vs Yolo</a>
+            <a href='/Faiz'>Harcasacde</a>
+            <a href='/Anas'>Smoking</a>
+    </div>
+    </nav></div>
+
+    <br>
+    <section>
+        <div class="sec2">
+            <h1>Smoking Detection using harcascade</h1>
+            
+        
+        <br><br>
+        <model-viewer src="cigarette.mb" alt="A 3D model of an astronaut" auto-rotate camera-controls></model-viewer>
+        </div>
+        <!-- <h1>Flask GET, POST tutorial</h1>
+    <p>Show CSV file in html using FLASK</p>
+    <a href='/Mujahid' style="color:red ;">mujahid</a>
+    <a href='/Kaif' style="color:orange ;">Kaif</a> -->
+    <br><br><br>
+    <div class="detect">
+    <h3>Before Image</h3> 
+    <img class="bef-img" src="{{url_for('static', filename='yolo-bef.jpg')}}" alt="image">
+    
+    <h3>Detected Image</h3>
+    <img class="aft-img" src="{{url_for('static', filename='yolo-aft.jpg')}}" alt="image" >
+    
+    </div>
+    <a class="retry" href="/" >Retry</a>
+</body>
+</html>
