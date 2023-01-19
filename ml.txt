@@ -1,0 +1,182 @@
+SMOKING DETECTION:
+
+intro:
+Object detection is an advanced form of image classification where a neural network predicts objects in an image and points them out in the form of bounding boxes.
+
+Object detection thus refers to the detection and localization of objects in an image that belong to a predefined set of classes.
+
+Tasks like detection, recognition, or localization find widespread applicability in real-world scenarios, making object detection (also referred to as object recognition) a very important subdomain of Computer Vision.
+Two-stage object detection refers to the use of algorithms that break down the object detection problem statement into the following two-stages: 
+
+Detecting possible object regions.
+Classifying the image in those regions into object classes.
+
+Popular two-step algorithms like Fast-RCNN and Faster-RCNN typically use a Region Proposal Network that proposes regions of interest that might contain objects.
+https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/60d31e388536752a275673aa_machine-learning-infographic.jpg
+
+WHAT IS YOLO?
+YOU ONLY LOOK ONCE
+YOLO proposes the use of an end-to-end neural network that makes predictions of bounding boxes and class probabilities all at once.
+
+Following a fundamentally different approach to object detection, YOLO achieves state-of-the-art results beating other real-time object detection algorithms by a large margin.
+
+YOLO is a much faster algorithm than its counterparts, running at as high as 45 FPS.
+YOLO performs all of its predictions with the help of a single fully connected layer not like other methods iterating on same image with roi.
+YOLO gets away with a single iteration.  
+
+INTERSECTION OVER UNION?
+Intersection over Union is a popular metric to measure localization accuracy and calculate localization errors in object detection models.
+https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/60edcdba3ff653819a152b0b_sjpuu8ft_165kxIhdSZSO0glxkVdTuenIxo44QQL6K2I5xbhFfTqftjaK66BblyNCIxm9X5gppWCh0JgsMu-2trIKgC-_wjT9R2aDdOEbH3F5aE2Ncf6O6Y64E9bPe1bbRCOGBjZ.png
+YOLO WORK?
+The YOLO algorithm works by dividing the image into N grids, each having an equal dimensional region of SxS. Each of these N grids is responsible for the detection and localization of the object it contains.
+https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/60edcdbb660bc4adc635f744_P9709u0H-JwS5jCaxiFCdr0_HQnbe3dExzj7Nq_fkcL3HIFTsBGt2uTWA89fLVcZik5dBjVw5BRlSy5KooKI-tXCXmPJ1aLHVxOcr-YLxGKbVwBrxjWKCCo8TUV90TgB37tmkpMz.png
+
+timeline
+https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/6115390ff9a74f770cf01306_timeline-yolo.png
+NEW\yolo chart.png
+
+
+steps:
+Training images:
+1>go to makesense.ai upload ur images\
+2>select the label names
+3>draw bounding boxes on each image and select respective labels
+4>save file as yolo type (file contains 4 bounding boxes vertices and other value of labels) 
+Training model:
+1>[go to yolov5 github google collab.]
+create yaml file and add to yolov5 file data
+train: ../data/images/training/
+val: ../data/images/validation/
+
+# number of classes
+nc: 2
+
+# class names
+names: ['with mask', 'without mask']
+
+2>go to Training part
+3>change epochs [540] data [above yaml file] weights will be same
+4>u get new weights as .pt in weights 
+
+folder download it.
+converting to onnx format
+1>clone yolov5 respo
+2>use this commd->python export.py --weights models/best3.pt --include onnx
+this can be used in OpenCV
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+1> harcascade
+Object Detection is a computer technology related to computer vision, image processing and deep learning that deals with detecting instances of objects
+in images and videos. We will do object detection in this article using something known as haar cascades.
+
+Haar Cascade classifiers are an effective way for object detection. This method was proposed by Paul Viola and Michael Jones in their paper Rapid Object Detection using a Boosted Cascade of Simple Features .Haar Cascade is a machine learning-based approach where a lot of positive and negative images are used to train the classifier. 
+ 
+
+Positive images – These images contain the images which we want our classifier to identify.
+Negative Images – Images of everything else, which do not contain the object we want to detect.
+
+   A Haar classifier, or a Haar cascade classifier, is a machine learning object detection program that identifies objects in an image and video.
+
+-->Calculating Haar Features
+-->Creating Integral Images
+-->Using Adaboost
+-->Implementing Cascading Classifiers
+image: http://www.willberger.org/cascade-haar-explained/
+ 
+- Haar cascades are machine learning object detection algorithms.
+- They use use Haar features to determine the likelihood of a certain point being part of an object.
+- Boosting algorithms are used to produce a strong prediction out of a combination of “weak” learners.
+- Cascading classifiers are used to run boosting algorithms on different subsections of the input image.
+- Make sure to optimize against false negatives for Haar cascades.
+- Use OpenCV for implementing a Haar cascade model yourself.
+  
+  creating positives [required object to train] and negatives [other than required] 
+  Training xml file
+
+2> yolo model cnn
+
+3> creating own neural network
+
+
+
+ ------------------------------WEBAPP:-----------------------------------------------
+HTTP is the protocol for websites. The internet uses it to interact and communicate with 
+computers and servers. Let me give you an example of how you use it everyday.
+  HOW FLASK IS INVOLVED ?
+We will write code that will take care of the server side processing. Our code will receive 
+requests. It will figure out what those requests are dealing with and what they are asking. 
+It will also figure out what response to send to the user.
+To do all this we will use Flask.
+
+  WHAT IS FLASK ?
+It makes the process of designing a web application simpler. Flask lets us focus on what the 
+users are requesting and what sort of response to give back.
+
+1> creating main.py
+
+2> adding more routes
+
+3> put html files only in templates folder
+The Flask Framework looks for HTML files in a folder called templates.
+You need to create a templates folder and put all your HTML files in there.
+
+4> now do changes in main.py using render_template
+
+5> adding more html pages
+
+6> Connecting pages: First, let’s create a template.html. This template.html will serve as a parent template. 
+Our two child templates will inherit code from it.
+
+7> We use the function called url_for(). It accepts the name of the function as an argument. 
+The two lines with the curly brackets will be replaced by the content of home.html and about.html. This will 
+depend on the URL in which the user is browsing.
+These changes allow the child pages (home.html and about.html) to connect to the parent (template.html). 
+This allows us to not have to copy the code for the navigation menu in the about.html and home.html.
+
+8> In static, we will store our CSS, JavaScript, images, and other necessary files. That is why it is 
+important that you should create a CSS folder to store your stylesheets
+
+9> In static, we will store our CSS, JavaScript, images, and other necessary files. That is why it is 
+important that you should create a CSS folder to store your stylesheets
+
+-----------------------------------------------------------------------------------------------------------------
+-->yolo:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+img {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+
+AR smoking detection using YOLO (You Only Look Once) object detection algorithm:
+
+Collect and label a dataset of images of people smoking and not smoking. This dataset will be used to train the YOLO model.
+Use a deep learning framework such as TensorFlow or PyTorch to train the YOLO model on the dataset.
+Integrate the trained YOLO model into an AR application using a platform such as ARKit or ARCore.
+Use the AR application's camera feed as input for the YOLO model and detect smoking in real-time.
+Use the AR application to overlay an alert or warning message on the screen when smoking is detected.
+Keep in mind that this is a complex project that requires knowledge of machine learning, deep learning, YOLO, and AR development. It is important to have the right dataset and a powerful machine to train the model. It will also require a lot of time and resources to develop this kind of application.
